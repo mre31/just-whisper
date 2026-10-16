@@ -1,0 +1,49 @@
+[package]
+name = "just-whisper"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.92"
+description = "Push-to-talk Whisper dictation for GNOME Wayland"
+license = "MIT"
+
+[features]
+default = ["vulkan"]
+# Use the native Vulkan backend with the shipped generic GGML bindings.
+# whisper-rs 0.16's Vulkan helper requires extra generated bindings/libclang.
+vulkan = ["whisper-rs-sys/vulkan"]
+
+[dependencies]
+anyhow = "1"
+ashpd = { version = "0.13", default-features = false, features = ["tokio", "global_shortcuts"] }
+evdev = "0.13"
+# Pin the native DFN3 runtime and its embedded model together.
+deep_filter = { git = "https://github.com/Rikorose/DeepFilterNet.git", rev = "d375b2d8309e0935d165700c91da9de862a99c31", default-features = false, features = ["tract", "default-model"] }
+futures-util = "0.3"
+gtk = { package = "gtk4", version = "0.11", features = ["v4_12"] }
+libc = "0.2"
+ndarray = "0.15"
+rustfft = "6"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["rt", "sync", "macros", "time"] }
+# Match libDF's tested Tract API and ndarray version. Later patch releases
+# changed these APIs; keep these constraints even though used through libDF.
+tract-core = "=0.21.4"
+tract-hir = "=0.21.4"
+tract-onnx = "=0.21.4"
+tract-pulse = "=0.21.4"
+whisper-rs = "0.16"
+whisper-rs-sys = "0.15"
+
+[profile.dev]
+debug = 0
+
+# Tract 0.21.4's debug graph-name check rejects duplicate bias names generated
+# while optimizing the bundled DFN3 model. Use its release behavior for this
+# dependency in development/tests too. Application assertions remain enabled.
+[profile.dev.package.tract-core]
+debug-assertions = false
+
+[profile.release]
+lto = "thin"
+strip = true

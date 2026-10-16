@@ -1,0 +1,7 @@
+[env]
+# whisper-rs ships bindings. A system libclang is not needed for this build.
+WHISPER_DONT_GENERATE_BINDINGS = "1"
+
+[build]
+jobs = 2
+

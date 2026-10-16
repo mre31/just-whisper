@@ -1,0 +1,115 @@
+window {
+    background: #f8f9fa;
+    color: #24282d;
+    font-family: "Adwaita Sans", "Cantarell", sans-serif;
+    font-size: 14px;
+}
+
+headerbar {
+    background: #ededee;
+    border-bottom: 1px solid #d9dbde;
+    box-shadow: none;
+    min-height: 46px;
+}
+
+.window-title { font-size: 15px; font-weight: 650; }
+headerbar windowcontrols > button:not(.flat) {
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    min-height: 24px;
+    min-width: 24px;
+    color: #69717b;
+}
+headerbar windowcontrols > button:not(.flat):hover { background: #dadcdf; }
+
+.sidebar {
+    background: #f6f6f7;
+    border-right: 1px solid #dedfe2;
+    padding: 18px 14px;
+}
+
+searchentry {
+    background: #ffffff;
+    color: #24282d;
+    border: 1px solid #d3d5d9;
+    border-radius: 9px;
+    min-height: 38px;
+    box-shadow: none;
+}
+
+.navigation { background: transparent; }
+.navigation row {
+    border-radius: 8px;
+    margin-bottom: 5px;
+    padding: 13px 14px;
+    color: #35393f;
+}
+.navigation row:hover { background: #e9eaed; }
+.navigation row:selected { background: #ed7046; color: #ffffff; }
+.navigation row:selected:hover { background: #e4663b; }
+.nav-title { font-size: 14px; font-weight: 550; }
+.navigation image { color: inherit; }
+.navigation row:focus-visible { outline: 2px solid #c44b24; outline-offset: -2px; }
+
+.sidebar-status { border-top: 1px solid #dedfe2; padding-top: 18px; }
+.phase-label { color: #6b727c; font-size: 13px; font-weight: 600; }
+.phase-label.recording { color: #c3472e; }
+.phase-label.processing { color: #956327; }
+.shortcut { color: #7a818a; font-size: 12px; }
+
+.settings-page { padding: 28px 30px 32px; }
+.page-title { font-size: 25px; font-weight: 650; margin-bottom: 2px; }
+.settings-card {
+    background: #ffffff;
+    border: 1px solid #dfe1e4;
+    border-radius: 12px;
+}
+.card-title { color: #69717b; font-size: 13px; font-weight: 650; padding: 20px 22px 6px; }
+.setting-row { padding: 20px 22px; border-bottom: 1px solid #eceef0; }
+.setting-row:last-child { border-bottom: none; }
+.row-title { font-size: 14px; font-weight: 550; }
+.muted { color: #79818b; font-size: 12px; }
+.info-note {
+    color: #69717b;
+    background: #eff0f2;
+    border: 1px solid #e0e2e5;
+    border-radius: 9px;
+    padding: 14px 18px;
+    font-size: 12px;
+}
+
+.footer { background: #f8f9fa; border-top: 1px solid #dedfe2; padding: 12px 30px 18px; }
+.status { color: #69717b; font-size: 12px; }
+.error { color: #bf3b2d; }
+
+entry, dropdown > button, button {
+    border-radius: 8px;
+    min-height: 32px;
+}
+entry, dropdown > button, button:not(.flat) {
+    background: #ffffff;
+    color: #35393f;
+    border: 1px solid #d3d5d9;
+    box-shadow: none;
+}
+button:not(.flat):hover { background: #f0f1f3; }
+button:not(.flat):active { background: #e5e7eb; }
+button:disabled { color: #a0a5ad; }
+entry:focus-within, dropdown > button:focus-visible, button:focus-visible {
+    outline: 2px solid #ed7046;
+    outline-offset: 2px;
+}
+button.suggested-action { background: #ed7046; border-color: #ed7046; color: #ffffff; font-weight: 600; padding: 5px 18px; }
+button.suggested-action:hover { background: #e4663b; border-color: #e4663b; }
+button.suggested-action:active { background: #d65c32; }
+button.suggested-action:disabled { background: #f2c1b0; border-color: #f2c1b0; }
+
+switch { background: #d4d7dc; border: none; border-radius: 20px; min-width: 44px; min-height: 26px; }
+switch slider { background: #ffffff; border: none; border-radius: 50%; min-width: 22px; min-height: 22px; box-shadow: 0 1px 3px alpha(#000000, 0.15); }
+switch:checked { background: #ed7046; }
+switch:checked slider { background: #ffffff; }
+switch:focus-visible { outline: 2px solid #ed7046; outline-offset: 3px; }
+progressbar text { color: #69717b; font-size: 12px; }
+progressbar trough { background: #eceef0; border: none; padding: 0; box-shadow: none; border-radius: 5px; min-height: 6px; }
+progressbar progress { background: #ed7046; border: none; padding: 0; box-shadow: none; border-radius: 5px; min-width: 6px; min-height: 6px; }

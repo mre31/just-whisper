@@ -1,0 +1,6 @@
+/target/
+*.part
+*.bin
+*.wav
+/whisperkey/
+

@@ -1,0 +1,8 @@
+{
+  "uuid": "just-whisper@local",
+  "name": "Just Whisper overlay",
+  "description": "Focus-free recording pill and processing spinner for Just Whisper.",
+  "shell-version": ["48", "49", "50"],
+  "version": 1
+}
+
